@@ -5,7 +5,7 @@
         public $image;
         public $pet;
 
-        function __construct($name,$image,$price,Pet $pet){
+        function __construct($name,$price,Pet $pet,$image){
             $this->name = $name;
             $this->price = $price;
             $this->image = $image;
@@ -27,16 +27,30 @@
     class Item extends Product{
         public $type;
 
-        function __construct($name,$image,$price,Pet $pet,$type){
-            parent::__construct($name,$image,$price, $pet);
+        function __construct($name,$price,Pet $pet,$type,$image ){
+            parent::__construct($name,$price, $pet,$image);
             $this->type = $type;
         }
     }
-    $pet_1 = new Pet('dog', '<i class="fa-solid fa-dog"></i>');
-    $pet_2 = new Pet('cat', '<i class="fa-solid fa-cat"></i>');
-    $pet_3 = new Pet('bird', '<i class="fa-solid fa-crow"></i>');
-    $pet_4 = new Pet('fish', '<i class="fa-solid fa-fish"></i>');
-    $product_1 = new Item('Crocchette','https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000','5.8', $pet_1, 'cibo');
+    $cane = new Pet('dog', '<i class="fa-solid fa-dog"></i>');
+    $gatto = new Pet('cat', '<i class="fa-solid fa-cat"></i>');
+    $uccelli = new Pet('bird', '<i class="fa-solid fa-crow"></i>');
+    $pesci = new Pet('fish', '<i class="fa-solid fa-fish"></i>');
+    $product_1 = new Item('Croccantini per cane adulto di piccola taglia', 7, $cane, 'Cibo','https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000');
+    $product_2 = new Item('Croccatini per cane adulto di media taglia', 8, $cane, 'Cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg');
+    $product_3 = new Item('Carne di vitello per gatto adulto', 2, $gatto, 'Cibo','https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg');
+    $product_4 = new Item('Mangime per pesci', 4,$pesci, 'Cibo','https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg');
+    $product_5 = new Item('Voliera per uccellini - Wilma', 50, 'Accessori',$uccelli,'https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg');
+    $product_6 = new Item('Ricambio cartuccie per filtro acquario', 10, $pesci, 'Accessori','https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg');
+    $product_7 = new Item('Kong - Giocattolo per cani', 2, $cani, 'Giochi', 'https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg');
+    $product_8 = new Item('Topolino di peluche', 5,$gatti, 'Giochi', 'https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg');
+    // var_dump($product_1->name);
+    // var_dump($product_1->image);
+    // var_dump($product_1->price);
+    // var_dump($product_1->type);
+    // var_dump($product_1->pet->pet);
+    // var_dump($product_1->pet->icon);
+
 
     ?>
 
